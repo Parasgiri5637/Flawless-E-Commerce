@@ -1,0 +1,593 @@
+@import "./Variables.scss";
+@import "./mixin.scss";
+
+img {
+  mix-blend-mode: multiply;
+}
+//* ============================================ Header
+.header {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)),
+    url("https://websitedemos.net/skin-cleanser-store-02/wp-content/uploads/sites/933/2021/08/skin-cleanser-template-hero-img-bg.jpg");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.headerText {
+  width: 88%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-block: 6em;
+  h6 {
+    color: $color-white;
+    letter-spacing: 2px;
+    font-weight: 200;
+    font-size: $font-size-small;
+  }
+  .headerH1 {
+    margin-block: 4em;
+  }
+  .changeText {
+    color: $color-Radical-Red;
+    font-weight: 700;
+  }
+  h1 {
+    color: $color-white;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: $font-size-small-logo;
+    font-family: "Quicksand", sans-serif;
+  }
+  .headerBtn {
+    @include btnStyle;
+    border: 1px solid $color-white;
+    text-transform: uppercase;
+    color: $color-white;
+    padding: 0.8em 1.5em;
+  }
+  .blinkingCursor::after {
+    content: "|";
+    font-weight: 100;
+    animation: blink 1s step-start infinite;
+    color: $color-Radical-Red;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+//* ======================================= New Arrival Products
+
+.newArrivals {
+  @include maxWidth;
+
+  &_title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+
+    h2 {
+      font-size: 3rem;
+      font-weight: 400;
+    }
+
+    button {
+      @include btnStyle;
+      border: 1px solid $color-Radical-Red;
+      outline: none;
+      color: $color-Radical-Red;
+      transition: all 0.3s ease-in;
+
+      &:hover {
+        background-color: $color-Radical-Red;
+        color: $color-white;
+      }
+      &:active {
+        transform: scale(0.96);
+      }
+    }
+  }
+
+  .newProducts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 3em;
+    margin-block: 5em;
+    padding-inline: 2em;
+
+  }
+}
+
+//* ============================================ Products Card
+
+.product {
+  border-radius: 1.5rem;
+  &:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+  }
+}
+.product__img {
+  padding: 1em;
+  height: 20rem;
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+   
+  }
+
+  img {
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+
+    &:hover{
+      
+        mix-blend-mode: multiply;
+       
+    }
+  }
+}
+
+.productInfo {
+  padding: 1em;
+
+  &__category {
+    font-size: $font-size-small-2;
+    color: $color-Neon-Silver;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+
+  &__title {
+    font-size: $font-size-medium;
+    margin-block: 0.4em;
+  }
+  .ratings {
+    margin-bottom: 0.4em;
+
+    .icon {
+      font-size: $font-size-small-2;
+    }
+  }
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .discountPrice {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+
+      .price {
+        font-size: $font-size-small-2;
+        font-weight: 600;
+
+        color: $color-grey;
+      }
+      .discount {
+        font-size: $font-size-small;
+        font-weight: 500;
+        letter-spacing: 1px;
+        background-color: $color-grey;
+        color: $color-white;
+        padding: 0.1em 0.2em;
+        border-radius: 0.3rem;
+        font-weight: 500;
+      }
+    }
+    p {
+      font-size: $font-size-small-2;
+      font-weight: 500;
+      color: $color-grey;
+      font-weight: 600;
+      color: $color-grey;
+    }
+  }
+}
+
+//*================================================== Read More
+
+.readMore {
+  @include maxWidth;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-bottom: 1px solid $color-Neon-Silver;
+  padding-bottom: 8em;
+  &__img {
+    margin: 0 auto;
+    img {
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+
+  &__text {
+    text-align: start;
+
+    .divider {
+      margin-top: 3em;
+      margin-bottom: 5em;
+      span {
+        position: relative;
+      }
+      span::after {
+        position: absolute;
+        content: "";
+        height: 1px;
+        width: 8rem;
+        background-color: $color-grey;
+      }
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: clamp(2.8rem, 3vw, 4rem);
+    }
+    p {
+      font-size: clamp(1.4rem, 2.5vw, 1.6rem);
+      margin-block: 2em;
+      color: #646467;
+    }
+
+    button {
+      @include btnStyle;
+      border: 1px solid $color-Radical-Red;
+      color: $color-Radical-Red;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: $color-Radical-Red;
+        color: $color-white;
+      }
+      &:active {
+        transform: scale(0.96);
+      }
+    }
+  }
+}
+
+//*=============================================== Basic Info
+
+.basicInfo {
+  @include maxWidth;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 2em;
+
+  .basicDetail {
+    text-align: center;
+
+    &__Icon {
+      font-size: 3rem;
+      font-weight: 900;
+      color: $color-Radical-Red;
+    }
+    &__title {
+      margin-block: 1em 0.5em;
+      font-size: clamp(1.8rem, 4vw, 2rem);
+      font-weight: 400;
+    }
+    &__text {
+      font-size: clamp(1.4rem, 4vw, 1.6rem);
+      line-height: 3rem;
+      color: #646467;
+    }
+  }
+}
+
+//* ====================================================== WatchFlawless
+.WatchFlawless {
+  background-image: url("https://i.imgur.com/wWQ7Qp2.jpg");
+  height: 35rem;
+  background-position: center;
+  background-size: cover;
+
+  .watchVideo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h1 {
+      font-size: clamp(2.8rem, 3.5vw, 4rem);
+      color: $color-white;
+      margin-bottom: 0.8em;
+    }
+    button {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      color: $color-white;
+      border: 1px solid $color-white;
+      background-color: transparent;
+      padding: 0.8em 1.9em;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s ease-in-out;
+
+      span {
+        padding-top: 0.3em;
+      }
+
+      &:hover {
+        background-color: $color-white-smoke;
+        color: $color-Radical-Red;
+      }
+
+      &:active {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+//*======================================================= Loved By Customer Products
+.lovedByCustomer {
+
+  margin-top: 1em;
+  @include maxWidth;
+
+  .lovedByCustText {
+    text-align: center;
+    margin-bottom: 2em;
+    h1 {
+      font-size: clamp(2.8rem, 3.4vw, 4rem);
+      font-weight: 400;
+    }
+    p {
+      font-size: clamp(1.4rem, 3.4vw, 1.8rem);
+      font-weight: 500;
+      color: $color-Neon-Silver;
+    }
+  }
+  .loverByCustProduct {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  }
+}
+//*======================================================== Reviews Section
+.reviews {
+  @include maxWidth;
+  margin-block: 12em;
+
+  h1 {
+    text-align: center;
+    font-size: clamp(2.5rem, 3.4vw, 4rem);
+    font-weight: 400;
+    margin-bottom: 1.5em;
+  }
+  .reviewsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2em;
+    text-align: center;
+  }
+  .custmReviews {
+    .reviewsStar {
+      margin-bottom: 1em;
+    }
+    .reviewsText {
+      color: #646467;
+      font-size: clamp(1.6rem, 3.4vw, 1.8rem);
+      font-weight: 500;
+    }
+    .reviewsImg {
+      display: flex;
+      justify-content: center;
+      margin-block: 1em;
+
+      img {
+        border-radius: 5rem;
+      }
+    }
+  }
+  .reviewsName {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #646467;
+    letter-spacing: 1px;
+  }
+}
+//* ======================================================== Modals
+
+//*==================== Video Modal
+.video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: end;
+  width: 281px;
+  height: 281px;
+  z-index: 999;
+
+  .btnClose {
+    color: $color-white;
+    font-size: 3.5rem;
+    cursor: pointer;
+  }
+
+  .iframe {
+    border-radius: 2rem;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+//*=========================== ReadMore Modal
+.modalWrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  
+}
+.modal {
+  .container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 50%;
+    overflow: auto;
+    border-radius: 2rem;
+    z-index: 999;
+  }
+
+  ul {
+    padding: 1em;
+    border-radius: 2rem;
+
+    background-color: #ffff;
+    text-align: left;
+    display: inline-block;
+
+    .btnClose {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    li {
+      list-style: none;
+      font-size: clamp($font-size-small-2, 2.5vw, $font-size-medium-1);
+      color: #646467;
+      margin-bottom: 1em;
+    }
+
+    span {
+      font-weight: 600;
+    }
+  }
+}
+
+//* ============================================================== Media Query
+@media (min-width: 500px) {
+  .headerText {
+    h6 {
+      font-size: $font-size-medium;
+    }
+    h1 {
+      width: 80%;
+      font-size: $font-size-logo;
+    }
+  }
+
+  .video {
+    width: 400px;
+  }
+}
+
+@media (min-width: 860px) {
+  .header {
+    min-height: 80vh;
+  }
+  .headerText {
+    h6 {
+      font-size: $font-size-medium-2;
+    }
+    h1 {
+      width: 62%;
+      font-size: $font-size-extra-large;
+    }
+    .headerBtn {
+      padding: 1em 1.5em;
+      font-weight: 200;
+      @include btnStyle;
+
+      &:hover {
+        background-color: $color-white;
+        color: $color-Radical-Red;
+        transition: all 300ms ease-in-out;
+      }
+    }
+  }
+}
+
+@media (min-width: 762px) {
+  .newArrivals {
+    &_title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+
+      h2 {
+        font-size: $font-size-large;
+        font-weight: 200;
+      }
+    }
+
+    .newProducts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    }
+  }
+
+  .readMore {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5em;
+
+    &__img {
+      margin: 0;
+      width: 150rem;
+      img {
+        height: auto;
+        object-fit: cover;
+        object-position: top;
+        width: 100%;
+      }
+    }
+
+    &__text {
+      width: 150rem;
+
+      p {
+        line-height: 3rem;
+        letter-spacing: 1px;
+      }
+    }
+  }
+  .WatchFlawless {
+    min-height: 45rem;
+  }
+  .video {
+    width: 700px;
+  }
+
+  .lovedByCustomer {
+    .loverByCustProduct {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+      gap: 3em;
+    }
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1100px) {
+  .header {
+    min-height: 0;
+  }
+  .headerText {
+    width: 90%;
+  }
+}

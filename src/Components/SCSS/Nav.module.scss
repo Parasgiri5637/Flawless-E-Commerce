@@ -1,0 +1,210 @@
+@import "./Variables.scss";
+
+.nav {
+  position: relative;
+  border-bottom: 0.5px solid rgb(243, 233, 233);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1.5em;
+}
+
+.navLinks {
+  .links {
+    position: absolute;
+    top: -330%;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-white;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    gap: 1em;
+    padding-block: 1em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+
+    &.activeLinks {
+      top: 103%;
+    }
+    a {
+      text-transform: uppercase;
+      font-size: $font-size-medium;
+      font-weight: 500;
+
+      &:hover {
+        color: $color-Radical-Red;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+    a:not(:last-child) {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .navMenu {
+    font-size: 2.5rem;
+    color: $color-white;
+    margin-left: 1em;
+  }
+}
+.navlogo {
+  font-size: $font-size-logo;
+  color: $color-white;
+  letter-spacing: 1px;
+}
+.userAction {
+  display: flex;
+  gap: 0.5em;
+  font-size: $font-size-medium-3;
+  color: $color-white;
+  margin-right: 1em;
+    span{
+      position: absolute;
+      top: 1rem;  
+      right: 3rem;
+      background-color: $color-Radical-Red;
+      color: $color-white;
+      font-size: 1.5rem;
+      border-radius: 2rem;
+      padding: 0.2em 0.5em 0.2em 0.5em;
+     }
+    }
+
+.navCart {
+  color: $color-white;
+}
+@media (min-width: 992px) {
+  .userAction {
+    gap: 0.5em;
+  }
+  .nav {
+    padding-inline: 2em;
+  }
+  .navlogo {
+    width: 40rem;
+    font-size: $font-size-large;
+    letter-spacing: 1px;
+    padding-left: 4rem;
+  }
+  .navMenu {
+    display: none;
+  }
+
+  .navLinks {
+    margin-left: 1em;
+    .links {
+      all: unset;
+    }
+    a {
+      font-size: $font-size-medium-2;
+      margin-right: 1em;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.productNav {
+  font-size: $font-size-medium-2;
+  color: $color-grey;
+
+  &:hover {
+    color: $color-Radical-Red;
+    transition: all 0.3s ease-in;
+  }
+}
+.productLogo {
+  width: 40rem;
+  font-size: $font-size-large;
+  letter-spacing: 1px;
+  padding-left: 4rem;
+  color: black;
+}
+.productAction {
+  color: $color-grey;
+}
+
+//*=================================================== Nav 2
+.nav2 {
+  position: relative;
+  border-bottom: 0.5px solid rgb(243, 233, 233);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1.5em;
+  background-color: $color-white;
+}
+.navMenu2 {
+  font-size: 2.5rem;
+  color: $color-grey;
+  margin-left: 1em;
+}
+
+.prolinks {
+  text-transform: uppercase;
+  font-size: $font-size-medium;
+  font-weight: 500;
+  color: $color-grey;
+}
+
+.navlogo2 {
+  font-size: clamp(2rem, 3.4vw, $font-size-logo);
+  color: $color-Radical-Red;
+  letter-spacing: 1px;
+}
+.userAction2 {
+  display: flex;
+  gap: 0.5em;
+  font-size: $font-size-medium-3;
+  color: $color-grey;
+  margin-right: 1em;
+    span{
+      position: absolute;
+      top: 1rem;  
+      right: 3rem;
+      background-color: $color-Radical-Red;
+      color: $color-white;
+      font-size: 1.5rem;
+      border-radius: 2rem;
+      padding: 0.2em 0.5em 0.2em 0.5em;
+     }
+   
+    }
+
+
+.navCart2 {
+  color: $color-Radical-Red;
+ 
+}
+
+@media (min-width: 992px) {
+  .nav2 {
+    padding-inline: 2em;
+  }
+  .navMenu2 {
+    display: none;
+  }
+  .navlogo2 {
+    width: 40rem;
+    font-size: $font-size-large;
+    letter-spacing: 1px;
+    padding-left: 4rem;
+  }
+  
+}
+
+@media (max-width: 992px){
+  .userAction,  .userAction2{
+    span{
+      position: absolute;
+      top: 0.2rem;  
+      right: 1rem;
+      background-color: $color-Radical-Red;
+      color: $color-white;
+      font-size: 1.5rem;
+      border-radius: 2rem;
+      padding: 0.2em 0.5em 0.2em 0.5em;
+     }
+  }
+}

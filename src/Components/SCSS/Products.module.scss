@@ -1,0 +1,72 @@
+@import "./Variables.scss";
+@import "./mixin.scss";
+
+.product {
+  border-radius: 1.5rem;
+}
+.product__img {
+  padding: 1em;
+
+  img {
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.productInfo {
+  padding: 1em;
+
+  &__category {
+    font-size: $font-size-small-2;
+    color: $color-Neon-Silver;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+
+  &__title {
+    font-size: $font-size-medium;
+    margin-block: 0.4em;
+  }
+  .ratings {
+    margin-bottom: 0.4em;
+
+    .icon {
+      font-size: $font-size-small-2;
+    }
+  }
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .discountPrice {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+
+      .price {
+        font-size: $font-size-small-2;
+        font-weight: 600;
+
+        color: $color-grey;
+      }
+      .discount {
+        font-size: $font-size-small;
+        font-weight: 500;
+        letter-spacing: 1px;
+        background-color: $color-grey;
+        color: $color-white;
+        padding: 0.1em 0.2em;
+        border-radius: 0.3rem;
+        font-weight: 500;
+      }
+    }
+    p {
+      font-size: $font-size-small-2;
+      font-weight: 500;
+      color: $color-grey;
+      font-weight: 600;
+      color: $color-grey;
+    }
+  }
+}

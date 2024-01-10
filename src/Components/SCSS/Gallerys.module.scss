@@ -1,0 +1,114 @@
+@import "./Variables.scss";
+@import "./mixin.scss";
+
+.gallery {
+  @include maxWidth;
+
+  h1 {
+    text-align: center;
+    font-size: clamp(2rem, 3.4vw, 2.4rem);
+    font-weight: 400;
+    margin-bottom: 2em;
+  }
+
+  &__Container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(29rem, 28rem));
+    gap: 4em;
+
+    justify-content: center;
+
+    img {
+      cursor: pointer;
+      object-fit: cover;
+      border-radius: 2rem;
+    }
+  }
+}
+
+.galleryOverlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modalGallery {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  color: white;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+
+  .galleryAction {
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 2em;
+    padding-top: 2em;
+
+    p {
+      font-size: 2rem;
+    }
+    .closeBtn {
+      font-size: 3rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+
+  .galleryContainer {
+    width: 320px;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2rem;
+
+    img {
+      object-fit: contain;
+      border-radius: 2rem;
+    }
+  }
+
+  .leftBtn,
+  .rightBtn {
+    font-size: 2.5rem;
+    position: fixed;
+    top: 50%;
+    margin-top: -2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .leftBtn {
+    left: clamp(0rem, 3vw, 3rem);
+  }
+  .rightBtn {
+    right: clamp(0rem, 3vw, 3rem);
+  }
+  .images {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5); /* Set the zoom scale here */
+  z-index: 1000; /* Ensure zoomed image is above others */
+}
+
+@media (min-width: 350px) {
+  .modalGallery {
+    .leftBtn,
+    .rightBtn {
+      background-color: transparent;
+    }
+  }
+}

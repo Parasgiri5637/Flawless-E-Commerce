@@ -1,0 +1,15 @@
+@import "./Variables.scss";
+
+@mixin maxWidth {
+  max-width: 1200px;
+  width: 85%;
+  margin: 6em auto;
+}
+@mixin btnStyle {
+  padding: 1em 1.5em;
+  font-weight: 500;
+  background: transparent;
+  font-size: $font-size-small-2;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}

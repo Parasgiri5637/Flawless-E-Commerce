@@ -1,0 +1,309 @@
+@import "./Variables.scss";
+@import "./mixin.scss";
+
+.shop {
+  min-height: 100vh;
+  width: 95%;
+  margin: 1em auto;
+}
+.darkShad{
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+}
+.activeWidth{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(22rem,1fr));
+  background-color: white;
+  padding: 2em;
+  border-radius: 2rem;
+}
+.shopItem {
+  &__Products{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(22rem,1fr));
+    background-color: white;
+    padding: 2em;
+    border-radius: 2rem;
+  }
+  &__btn{
+    display: flex;
+    margin-top: 0.8em;
+    gap: 2em;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+     padding-block: 0.8em;
+    border-radius: 2rem;
+
+    .btn{
+        font-size: 2.8rem;
+        border: 1px solid $color-Radical-Red;
+        border-radius: 2rem;
+        padding: 0.2em;
+        font-weight: 700;
+        color: $color-Radical-Red;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        
+        &:hover{
+          background-color: $color-Radical-Red;
+          color: $color-white;
+        }
+      }
+      .subBtn{
+        font-size: 1.5rem;
+        border: 1px solid $color-Radical-Red;
+        border-radius: 0.8rem;
+        padding: 0.2em 0.5em;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+          background-color: $color-Radical-Red;
+          color: $color-white;
+          transform: scale(1.2);
+        }
+      }
+  }
+  &__Sort{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $color-white;
+    margin-bottom: 0.8em;
+    border-radius: 2rem;
+    padding: 0.8em  1em;
+
+    .showTotalItem{
+      font-size: clamp(1.6rem,3.4vw,1.8rem);
+     
+    }
+    .sortItem{
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      .filterIcon{
+        font-size: clamp(1.5rem,3.4vw,1.8rem);
+        color: $color-Radical-Red;
+        cursor: pointer;
+      }
+      .selectSort{
+        border-radius: 2rem;
+        padding: 0.3em;
+        border: 1px solid $color-Radical-Red;
+        outline: none;
+
+        option {
+        border-radius: 2rem;
+         
+        }
+      }
+    }
+
+  }
+}
+
+.disableBtn{
+  visibility: hidden;
+ 
+}
+.activeBtn{
+  background-color: $color-Radical-Red;
+          color: $color-white;
+          transform: scale(1.2);
+}
+
+//* ============================================= Searchbar
+.filterItem__SearchBar{
+  display: flex;
+  justify-content: center;
+}
+.searchBarContainer{
+  margin-bottom: 1em;
+  padding-inline: 1em;
+  form{
+    position: relative;
+  }
+  .input{
+    padding: 0.5em 0 0.5em 1.5em;
+    font-size: 1.7rem;
+    width: 100vw;
+    border: 1px solid $color-Radical-Red;
+    outline: none;
+   letter-spacing: 1px;
+  }
+  .searchResult{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+    width: 100vw;
+    background-color: $color-white;
+    border-bottom: 1px solid $color-Radical-Red;
+    .result{
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      padding: 0.2em;
+      font-size: clamp(1.5rem,3.4vw,1.7rem);
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-Radical-Red;
+      }
+    }
+    .searchResultIcon{
+      color: $color-Radical-Red;
+    }
+  }
+  .searchIcon{
+    position: absolute;
+    left: 1.2rem;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(1.7rem,3.4vw,1.9rem);
+    color: $color-Radical-Red;
+    font-weight: 600;
+  }
+  .noData{
+    text-align: center;
+    font-size: clamp(1.5rem,3.4vw,1.7rem);
+    padding-block: 0.5em;
+  }
+}
+//*==================================================== filter Section
+
+.filterItem{
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  left: -16rem;
+  background-color: $color-white;
+  height: 100%;
+  padding: 0.5em 2em 0 0.5em;
+  transition: all 0.3s ease-in-out;
+
+  &.activeFilterSlide{
+    left: 0;
+  }
+  .filterCloseIcon{
+    text-align: end;
+    .filtercloseBtn{
+      font-size: 1.8rem;
+      color: $color-Radical-Red;
+      text-align: end;
+    }
+  }
+
+ &__byCompany{
+  background-color: $color-white;
+  border-radius: 2rem;
+  padding: 0.8em 0.5em;
+  text-align: center;
+  .brandTitle{
+    font-size: clamp(1.5rem,3.4vw,2rem);
+    font-weight: 300;
+    color: #646467;
+    margin-bottom: 0.5em;
+  }
+  .brandDropDown{
+    width: 90%;
+    border-radius: 2rem;
+    padding: 0.5em;
+    outline: none;
+    border: 1px solid $color-Radical-Red;
+
+    .brandOpt{
+      border-radius: 2rem;
+      font-size: clamp(1.2rem,3.4vw,1.4rem);
+    }
+  }
+ }
+}
+.filterItem__byPrice{
+  margin-block: 1em;
+}
+.filterSection{
+  display: grid;
+  place-items: center;
+  background-color: $color-white;
+  border-radius: 2rem;
+  padding-block: 0.2em;
+.filterTitle{
+  font-size: clamp(1.5rem,3.4vw,2rem);
+  font-weight: 300;
+  color: #646467;
+  margin-bottom: 0.5em;
+}
+  .filterOption{
+    margin-bottom: 0.6em;
+    cursor: pointer;
+
+    .spanFilter{
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    .circle{
+      color: $color-Radical-Red;
+      font-size: clamp(1.5rem,3.4vw,1.7rem);
+    }
+    .filterName{
+      font-size: clamp(1.4rem,3.4vw,1.6rem);
+    }
+  }
+}
+@media (min-width: 768px){
+    .shop{
+        .shopContainer {
+            display: grid;
+            grid-template-columns: 0.2fr 1fr;
+            gap: 2em; 
+          }
+    }
+    .activeWidth{
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(22rem,22rem));
+      background-color: white;
+      padding: 2em;
+      border-radius: 2rem;
+    }
+    .filterItem{
+      all: unset;
+    }
+    .searchBarContainer{
+      .input{
+        width: 50rem;
+        border-radius: 2rem;
+        padding: 0.5em 0 0.5em 1.6em;
+      }
+      .activeSearchBar{
+        border-radius: 2rem 2rem 0 0 ;
+      }
+      .searchResult{
+        width: 50rem;
+        background-color: $color-white;
+        border-radius: 0 0 2rem 2rem;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+          border-inline: 1px solid $color-Radical-Red;
+          
+        
+        .result{
+          cursor: pointer;
+        }
+      }
+      .searchIcon{
+        left: 1.5rem;
+        }
+    }
+ 
+    .filterIcon{
+     display: none;
+    }
+   
+  .filterCloseIcon{
+    display: none;
+  }
+}
+

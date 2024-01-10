@@ -1,0 +1,230 @@
+@import "./Variables.scss";
+@import "./mixin.scss";
+
+.headerAbout{
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
+          url("https://websitedemos.net/skin-cleanser-store-02/wp-content/uploads/sites/933/2021/09/skin-cleanser-template-about-header-img-bg.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        max-width: 100%;
+}
+
+.headerText{
+    padding-block: 5em 5em;
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+ 
+    h1{
+        font-size: clamp(3.6rem,5vw,7.2rem);
+        font-weight: 400;
+        color: $color-white;
+        margin-bottom: 0.3em;
+    }
+    p{
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: $color-white;
+        letter-spacing: 1px;
+        line-height: 2.5rem;
+        text-align: center;
+        margin-inline: 0.5em;
+    }
+   
+        span{
+            margin-top: 3em;
+            border-top: 1px solid $color-white;
+            width: 8rem;
+            display: flex;
+            direction: 1tr;
+        }
+    
+     
+    }
+
+    // ======================================================= Founder
+
+   .founder{
+    &__container{
+        @include maxWidth;
+    }
+    margin-block: 4em;
+    &__img{
+        display: grid;
+        place-items: center;
+        img{
+          border-radius: 2rem;
+        }
+    }
+    &__text{
+       &__details{
+        padding-bottom: 4em;
+        border-bottom: 1px solid $color-Neon-Silver;
+        h6{
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 3rem;
+            letter-spacing: 1px;
+            margin-top: 2em;
+            color: rgb(151, 147, 147);
+        }
+        .txtIcon{
+            width: 2.5rem;
+            margin-block: 2em 1em;
+        }
+        h3{
+            font-size: clamp(1.8rem,4vw,2.1rem);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        h5{
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 2em;
+            letter-spacing: 1px;
+        }
+        p{
+            margin-top: 0.1em;
+            font-size: 1.3rem;
+            font-weight: 600;  
+            color: rgb(151, 147, 147);
+            letter-spacing: 1px;
+        }
+       }
+       &__social{
+        margin-top: 0.8em;
+        p{
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color:  rgb(151, 147, 147);
+            margin-bottom: 0.7em;
+        }
+        .socialIcons{
+            display: flex;
+            align-items: center;
+            gap: 2em;
+
+            .sclIcon{
+                font-size: 2rem;
+                transition: all 0.3s ease-in;
+                cursor: pointer;
+                &:hover{
+                    color: $color-Radical-Red;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+    }
+   
+   }
+
+   //================================================================= Out Story
+   .ourStory{
+       
+       &__container{
+        padding-bottom: 5em;
+        border-bottom: 1px solid $color-Neon-Silver;
+        @include maxWidth;
+    }
+    .storyTitle{
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        font-weight: 400;
+        color:  rgb(131, 129, 129);
+        margin-bottom: 0.8em;
+    }
+    .story{
+        &__heading{
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.5em;
+        }
+        &__mainStory{
+            font-size: 1.6rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            line-height: 2.5rem;
+            color:  rgb(100, 98, 98);
+        }
+    }
+   }
+
+//=================================================================== Media Queries
+@media (min-width: 768px){
+    .founder{
+        &__container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
+            gap: 5em;
+            
+        }
+
+        &__text{
+            &__details{
+             h6{
+                 font-size: 1.4rem;
+                 font-weight: 400;
+                 line-height: 3rem;
+                 letter-spacing: 1px;
+                 margin-top: 5em;
+             }
+             .txtIcon{
+                 width: 2.5rem;
+                 margin-block: 4em 1em;
+             }
+            }
+         } 
+    }
+    .ourStory{
+        margin-block: 8em;
+        &__container{
+            display: grid;
+            grid-template-columns: 0.2fr 1fr;
+        }
+        .storyTitle{
+            margin: 0;
+        }
+       }
+}
+@media (min-width:1200px){
+    .headerAbout{
+        min-height: 90vh;
+    }
+    .headerText{
+    padding-block: 16em 0;
+    margin-inline: 1em;
+}
+}
+@media (min-width: 768px) and (max-width: 1100px){
+   
+    .founder{
+        &__img{
+            img{
+                height: 100%;
+            }
+        }
+        &__text{
+            padding-bottom: 2em;
+            &__details{
+             h6{
+                 margin-top: 1em;
+             }
+             .txtIcon{
+                 margin-block: 1.5em 1em;
+             }
+            h5{
+                margin-top: 1em;
+            }
+            p{
+                margin-top: 0.1em;
+            }
+            }
+         } 
+    }
+}
